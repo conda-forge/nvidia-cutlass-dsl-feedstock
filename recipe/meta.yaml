@@ -21,9 +21,7 @@
 
 # 3.14 and 3.14t both report py == 314; the `python` variant carries the ABI
 # build string (`3.14.* *_cp314t`)
-# Un-comment below to enable 3.14t builds.
 {% set py_tag = py ~ ("t" if (python | default("")).endswith("t") else "") %}
-{% set py_tag = py %}
 
 package:
   name: nvidia-cutlass-dsl-split
