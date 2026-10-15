@@ -1,6 +1,3 @@
-# Free-threaded CPython (3.14t) is not supported yet: protobuf publishes no
-# 3.14t packages. It will be enabled once it does
-
 {% set name = "nvidia_cutlass_dsl" %}
 {% set version = "4.8.1" %}
 {% set arm_variant_type = arm_variant_type | default("sbsa") %}
@@ -22,9 +19,7 @@
 
 # 3.14 and 3.14t both report py == 314; the `python` variant carries the ABI
 # build string (`3.14.* *_cp314t`)
-# Un-comment below to enable 3.14t builds.
-# {% set py_tag = py ~ ("t" if (python | default("")).endswith("t") else "") %}
-{% set py_tag = py %}
+{% set py_tag = py ~ ("t" if (python | default("")).endswith("t") else "") %}
 
 package:
   name: nvidia-cutlass-dsl-split
@@ -45,7 +40,7 @@ source:
     sha256: "e9049aaee440dc9f5c81e0fdfa46dc397c77937652f32d96eacae82cb438c3e8"  # [win and x86_64 and (cuda_compiler_version or "").startswith("13")]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not (linux64 or aarch64 or win64) or cuda_compiler_version in ("None", "")]
 
 requirements:
