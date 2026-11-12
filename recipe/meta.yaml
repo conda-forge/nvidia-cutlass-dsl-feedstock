@@ -45,7 +45,7 @@ source:
     sha256: "e9049aaee440dc9f5c81e0fdfa46dc397c77937652f32d96eacae82cb438c3e8"  # [win and x86_64 and (cuda_compiler_version or "").startswith("13")]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not (linux64 or aarch64 or win64) or cuda_compiler_version in ("None", "")]
 
 requirements:
